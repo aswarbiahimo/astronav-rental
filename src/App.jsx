@@ -6,6 +6,8 @@ import PaymentPage from "./pages/PaymentPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminPanel from "./pages/AdminPanel";
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
 
         {/* Halaman Admin Panel */}
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/update-password" element={<UpdatePassword />} />
       </Routes>
     </Router>
   );

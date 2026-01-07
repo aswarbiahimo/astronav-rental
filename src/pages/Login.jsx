@@ -127,9 +127,9 @@ const Login = () => {
               <span className="checkmark"></span>
               Remember me
             </label>
-            <a href="#" className="forgot-pass">
-              Lupa Password?
-            </a>
+            <div className="forgot-link">
+              <a href="/forgot-password">Lupa password?</a>
+            </div>
           </div>
 
           <button type="submit" className="btn-login" disabled={isLoading}>
