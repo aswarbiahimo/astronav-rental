@@ -28,7 +28,7 @@ const ForgotPassword = () => {
     const formattedPhone = formatPhoneNumber(phone);
 
     // Link tujuan reset password
-    const resetLink = "http://localhost:5173/update-password";
+    const resetLink = "https://astronav-rental-wlbk.vercel.app/update-password";
 
     // Isi pesan WhatsApp
     const waMessage = `*ASTRONAV RESET PASSWORD*\n\nHalo, kami menerima permintaan reset password.\nSilakan klik link berikut untuk membuat password baru:\n\n${resetLink}\n\nJika ini bukan Anda, abaikan pesan ini.`;
