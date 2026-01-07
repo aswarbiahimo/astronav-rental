@@ -251,3 +251,24 @@
     transform: translateX(0);
   }
 }
+
+.btn-back-home {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-back-home:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+}

@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Rocket,
   AlertCircle,
+  ChevronLeft,
 } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
 import "../styles/Login.css";
@@ -148,6 +149,12 @@ const Login = () => {
             Belum punya akun?{" "}
             <Link to="/register" className="register-link">
               Daftar Sekarang
+            </Link>
+          </p>
+          <p>
+            Kembali ke{" "}
+            <Link to="/" className="register-link">
+              Home
             </Link>
           </p>
         </div>

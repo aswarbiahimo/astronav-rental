@@ -189,7 +189,13 @@ const Navbar = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Get Started
+              <Link
+                to="/login"
+                className="btn-primary"
+                onClick={() => setClick(false)}
+              >
+                Masuk
+              </Link>
             </motion.button>
           </motion.div>
         )}
