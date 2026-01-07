@@ -1,0 +1,176 @@
+/* Container Utama */
+.register-page {
+  min-height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px; /* Padding lebih besar karena form panjang */
+}
+
+/* Background Shapes (Variasi posisi beda dikit dari login) */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.shape-3 {
+  width: 400px;
+  height: 400px;
+  background: #0ea5e9; /* Sky Blue */
+  top: -100px;
+  right: -100px;
+  animation: floatShape 8s infinite alternate;
+}
+
+.shape-4 {
+  width: 300px;
+  height: 300px;
+  background: #ec4899; /* Pink */
+  bottom: -50px;
+  left: -50px;
+  animation: floatShape 8s infinite alternate-reverse;
+}
+
+/* Kartu Register */
+.register-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 500px; /* Sedikit lebih lebar dari login */
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.register-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 15px;
+}
+.register-header h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+.register-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Error Alert */
+.error-alert {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+/* Inputs (Sama dengan Login) */
+.input-group {
+  margin-bottom: 18px;
+}
+.input-group label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #64748b;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-wrapper input:focus {
+  border-color: #2563eb;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Jika Error */
+.input-wrapper input.input-error {
+  border-color: #ef4444;
+}
+
+/* Tombol Register */
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn-register:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+.btn-register:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.register-footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #94a3b8;
+}
+.login-link {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+.login-link:hover {
+  text-decoration: underline;
+}

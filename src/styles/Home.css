@@ -1,0 +1,211 @@
+/* --- Variables (Konsisten dengan Navbar) --- */
+:root {
+  --primary-color: #2563eb;
+  --text-color: #ffffff;
+  --text-secondary: #cbd5e1;
+}
+
+/* --- Hero Section Container --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full layar */
+  background-image: url("https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?q=80&w=2070&auto=format&fit=crop"); /* Gambar jalanan gelap */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efek Parallax */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Lapisan Gelap di atas gambar background agar teks terbaca */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 1;
+}
+
+/* --- Layout Konten --- */
+.hero-container {
+  position: relative;
+  z-index: 2; /* Di atas overlay */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse; /* Mobile: Gambar di atas, Teks di bawah (nanti di-switch di desktop) */
+  gap: 50px;
+  align-items: center;
+  margin-top: 80px; /* Kompensasi tinggi Navbar */
+}
+
+/* --- Bagian Teks (Kiri) --- */
+.hero-text {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid rgba(37, 99, 235, 0.5);
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.hero-highlight {
+  color: var(--primary-color);
+  /* Efek teks gradient */
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* --- Tombol Group --- */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary {
+  display: inline-flex; /* Agar bisa diatur padding & posisi */
+  align-items: center; /* Teks di tengah vertikal */
+  justify-content: center; /* Teks di tengah horizontal */
+  text-decoration: none; /* Hilangkan garis bawah link */
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block; /* Tambahkan ini agar Link punya dimensi kotak */
+  text-decoration: none; /* Tambahkan ini agar tidak ada garis bawah */
+  text-align: center; /* Agar teks di tengah */
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Bagian Gambar Motor (Kanan) --- */
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-bike-img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+  animation: floatBike 3s ease-in-out infinite; /* Animasi Melayang */
+}
+
+/* Animasi Melayang CSS */
+@keyframes floatBike {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --- Responsive Desktop --- */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* Teks kiri, Gambar kanan */
+    text-align: left;
+    height: calc(100vh - 80px); /* Sisa tinggi layar */
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* --- Hero Stats (Bagian Bawah Tombol) --- */
+.hero-stats {
+  margin-top: 40px; /* Memberi jarak dari tombol ke tulisan bawah */
+  padding-top: 25px; /* Memberi ruang di atas garis */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah tipis */
+  display: flex;
+  gap: 40px; /* Jarak antara 'Asuransi' dan '50+ Unit' */
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Jarak antara Ikon dan Teks */
+}
+
+.stat-icon {
+  color: var(--primary-color); /* Warna biru ikon */
+  width: 28px;
+  height: 28px;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.stat-bold {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.stat-light {
+  font-size: 0.8rem;
+  color: var(--text-secondary); /* Warna abu-abu */
+  margin: 0;
+}

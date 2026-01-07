@@ -1,0 +1,371 @@
+/* 1. SETUP HALAMAN UTAMA */
+.armada-page {
+  background-color: #0f172a; /* Warna latar gelap utama */
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.armada-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 2. HEADER & PENCARIAN */
+.armada-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.armada-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.armada-header p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.search-bar {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 20px 14px 50px;
+  border-radius: 50px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #3b82f6;
+  background: #0f172a;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+/* 3. TABS KATEGORI (Matic, Sport, Bebek) */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  padding: 10px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tab-btn.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* 4. GRID MOTOR (LAYOUT KARTU) */
+.motor-grid {
+  display: grid;
+  /* Membuat kolom otomatis menyesuaikan layar (Responsive) */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* 5. KARTU MOTOR (Card Style) */
+.motor-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.motor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Gambar Motor */
+.motor-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px; /* Tinggi gambar tetap agar rapi */
+  background: #0f172a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motor-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar memenuhi kotak tanpa gepeng */
+  transition: transform 0.5s;
+}
+
+.motor-card:hover .motor-image-wrapper img {
+  transform: scale(1.1); /* Zoom effect saat hover */
+}
+
+.motor-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  backdrop-filter: blur(4px);
+}
+
+/* Info Motor */
+.motor-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Isi ruang kosong agar tombol sejajar */
+}
+
+.motor-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.motor-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 20px;
+}
+
+.motor-price small {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Tombol Pilih */
+.btn-pilih {
+  margin-top: auto; /* Dorong tombol ke paling bawah */
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #0f172a;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-pilih:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* --- MODAL POPUP STYLE (Popup Pesanan) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+}
+
+.modal-content {
+  background: #1e293b;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.modal-bike-info {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-bike-info img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.modal-bike-info h4 {
+  margin: 0 0 5px 0;
+  color: white;
+}
+.modal-bike-info p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Counter Hari */
+.duration-input-section label {
+  display: block;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 15px;
+}
+.counter-wrapper button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.counter-wrapper input {
+  width: 50px;
+  background: transparent;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.price-calculation {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+.calc-row.total {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.highlight {
+  color: #60a5fa;
+}
+
+.btn-confirm-booking {
+  width: 100%;
+  padding: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn-confirm-booking:hover {
+  background: #1d4ed8;
+}
+
+.btn-back-home {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-back-home:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+}

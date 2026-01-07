@@ -1,0 +1,335 @@
+/* --- LAYOUT UTAMA --- */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  position: relative; /* Penting untuk sidebar mobile */
+}
+
+/* SIDEBAR DESKTOP */
+.sidebar {
+  width: 260px;
+  background: #1e293b;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed; /* Tetap di kiri */
+  height: 100vh;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h2 {
+  color: #3b82f6;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* TOMBOL CLOSE (Hanya muncul di HP) */
+.close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MENU SIDEBAR */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.sidebar-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.sidebar-menu button:hover,
+.sidebar-menu button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.logout-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+}
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex-grow: 1;
+  margin-left: 260px; /* Memberi ruang untuk sidebar */
+  padding: 30px;
+  background: #0f172a;
+  width: calc(100% - 260px);
+}
+
+/* STATS CARDS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.stat-card.blue {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+.stat-card.orange {
+  background: linear-gradient(135deg, #7c2d12, #f97316);
+}
+.stat-card.green {
+  background: linear-gradient(135deg, #14532d, #22c55e);
+}
+.stat-card h3 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+.stat-card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* --- TABEL RESPONSIF (PENTING BUAT HP) --- */
+.table-responsive {
+  overflow-x: auto; /* Scroll samping jika tabel kepanjangan */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  min-width: 600px; /* Minimal lebar tabel agar tidak gepeng */
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.admin-table th {
+  background: #0f172a;
+  color: #94a3b8;
+  font-weight: 600;
+}
+.admin-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* STATUS BADGES */
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.status-badge.pending {
+  background: rgba(234, 179, 8, 0.2);
+  color: #facc15;
+}
+.status-badge.active {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+.status-badge.completed {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+.status-badge.cancelled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.btn-icon.green {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+.btn-icon.red {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+.flex {
+  display: flex;
+  gap: 8px;
+}
+
+/* FORM TAMBAH MOTOR */
+.form-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.add-motor-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.add-motor-form input,
+.add-motor-form select {
+  padding: 12px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+.add-motor-form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.add-motor-form button:hover {
+  background: #2563eb;
+}
+
+/* --- MOBILE RESPONSIVE CSS --- */
+.mobile-header {
+  display: none;
+} /* Default sembunyi di Desktop */
+
+@media screen and (max-width: 960px) {
+  /* 1. Reset Layout */
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  /* 2. Header Mobile Muncul */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+  .mobile-header button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  .mobile-header h3 {
+    margin: 0;
+    color: #3b82f6;
+  }
+
+  /* 3. Sidebar Sembunyi (Slide) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Sembunyi di kiri */
+    width: 280px;
+    height: 100vh;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  .sidebar.open {
+    left: 0; /* Muncul saat open */
+  }
+  .close-btn {
+    display: block;
+  } /* Tombol silang muncul */
+
+  /* Overlay Gelap */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+  }
+
+  /* 4. Konten Utama Full Width */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* 5. Form jadi 1 kolom */
+  .add-motor-form {
+    grid-template-columns: 1fr;
+  }
+}

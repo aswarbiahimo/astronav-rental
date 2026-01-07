@@ -1,0 +1,253 @@
+/* Container Utama */
+.login-page {
+  min-height: 100vh;
+  background-color: #0f172a; /* Dark Slate */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Background Shapes (Bola-bola cahaya) */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #2563eb; /* Biru Utama */
+  top: -50px;
+  left: -50px;
+  animation: floatShape 6s infinite alternate;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+  background: #7c3aed; /* Ungu */
+  bottom: -50px;
+  right: -50px;
+  animation: floatShape 6s infinite alternate-reverse;
+}
+
+@keyframes floatShape {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(30px, 30px);
+  }
+}
+
+/* Kartu Login (Glassmorphism) */
+.login-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.login-header h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Form Styling */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #64748b;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 14px 14px 45px; /* Padding kiri besar untuk icon */
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-wrapper input:focus {
+  border-color: #2563eb;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.btn-show-pass {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+}
+
+.btn-show-pass:hover {
+  color: white;
+}
+
+/* Actions (Checkbox & Forgot) */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.forgot-pass {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+/* Tombol Login */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.register-link {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.error-alert-login {
+  background: rgba(239, 68, 68, 0.2); /* Merah transparan */
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,346 @@
+/* --- Variabel Warna --- */
+:root {
+  --primary-color: #2563eb; /* Biru */
+  --text-color: #ffffff;
+  --text-secondary: #cbd5e1;
+  --bg-scrolled: rgba(0, 0, 0, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Navbar Container Utama --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+/* State ketika discroll (Glassmorphism) */
+.navbar.scrolled {
+  background: var(--bg-scrolled);
+  backdrop-filter: blur(12px); /* Efek kaca buram */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo --- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.logo-highlight {
+  color: var(--primary-color);
+}
+
+/* --- Desktop Menu --- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--text-color);
+}
+
+/* Animasi Garis Bawah (Underline) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Tombol "Get Started" --- */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.4); /* Efek Glow */
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
+}
+
+/* --- Mobile Toggle --- */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Mobile Menu Overlay (Perbaikan Total) --- */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* PERBAIKAN TRANSPARANSI: Gunakan 0.8 atau 0.7 agar tembus pandang */
+  background: rgba(15, 23, 42, 0.85);
+  /* PERBAIKAN EFEK KACA: Blur lebih kuat */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 9999;
+
+  /* Layout Flexbox */
+  display: flex;
+  flex-direction: column;
+  padding: 30px; /* Memberi jarak dari tepi layar */
+}
+
+/* --- Header di dalam Overlay (Tempat tombol X) --- */
+.mobile-close-header {
+  display: flex;
+  justify-content: space-between; /* Logo kiri, X kanan */
+  align-items: center;
+  margin-bottom: 60px; /* Jarak ke menu di bawahnya */
+}
+
+/* Tombol X baru */
+.close-btn-overlay {
+  background: rgba(255, 255, 255, 0.1); /* Lingkaran tipis */
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn-overlay:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg); /* Efek putar saat hover */
+  color: var(--primary-color);
+}
+
+/* --- Container Link --- */
+.mobile-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Menu di tengah */
+  gap: 2rem; /* Jarak antar menu */
+  margin-bottom: 4rem;
+  flex-grow: 1; /* Mengisi ruang kosong agar tombol di bawah */
+  justify-content: center;
+}
+
+.mobile-link {
+  font-size: 1.75rem; /* Ukuran font lebih besar dan elegan */
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.mobile-link:hover {
+  color: var(--primary-color);
+  transform: translateX(10px); /* Geser sedikit saat hover */
+}
+
+/* Tombol Get Started di Mobile */
+.btn-mobile-wide {
+  width: 100%; /* Tombol penuh ke samping */
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+/* --- Responsiveness (Media Query) --- */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Sembunyikan menu desktop di HP */
+  }
+
+  .mobile-toggle {
+    display: block; /* Tampilkan tombol burger di HP */
+  }
+}
+
+/* --- CODE TAMBAHAN: HANYA UNTUK PROFIL USER --- */
+/* (Tempel di paling bawah file, jangan hapus kode di atasnya) */
+
+.profile-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 15px; /* Jarak dari menu Admin */
+}
+
+/* Tombol Profil */
+.btn-profile {
+  background: rgba(255, 255, 255, 0.1); /* Transparan */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-profile:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #3b82f6;
+}
+
+/* Avatar & Icon */
+.avatar-circle {
+  width: 28px;
+  height: 28px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.chevron {
+  transition: transform 0.3s;
+}
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+/* Kotak Dropdown (Logout) */
+.dropdown-menu {
+  position: absolute;
+  top: 140%; /* Muncul di bawah tombol */
+  right: 0;
+  width: 220px;
+  background: #1e293b; /* Warna gelap solid agar tulisan jelas */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-header {
+  padding: 10px;
+  color: white;
+}
+.dropdown-header p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.dropdown-header small {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.dropdown-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.dropdown-item.logout {
+  color: #fca5a5;
+}
+.dropdown-item.logout:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* Mobile Adjustment */
+@media screen and (max-width: 960px) {
+  .profile-dropdown-container {
+    margin: 20px 0;
+    flex-direction: column;
+  }
+  .dropdown-menu {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+  }
+  .dropdown-item {
+    justify-content: center;
+  }
+}

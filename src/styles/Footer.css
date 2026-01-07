@@ -1,0 +1,156 @@
+/* --- Footer Container --- */
+.footer-section {
+  background-color: #020617; /* Warna paling gelap (hampir hitam) */
+  color: var(--text-secondary);
+  padding-top: 80px;
+  padding-bottom: 30px;
+  position: relative;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah tipis */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Grid Layout (Atas) --- */
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Kolom 1 lebih lebar */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- Kolom Brand --- */
+.footer-brand h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-desc {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 300px; /* Agar teks tidak terlalu melebar */
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* --- Kolom Links --- */
+.footer-col h4 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-links li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: var(--primary-color);
+  transform: translateX(5px); /* Efek geser ke kanan saat hover */
+}
+
+/* --- Kolom Newsletter / Contact --- */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsletter-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: var(--primary-color);
+}
+
+/* --- Footer Bottom (Copyright) --- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+  color: white;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr; /* Tablet: 2 kolom */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* Mobile: 1 kolom ke bawah */
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

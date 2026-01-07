@@ -1,0 +1,134 @@
+/* --- About Section --- */
+.about-section {
+  padding: 100px 24px;
+  background-color: #0f172a; /* Konsisten dengan section lain */
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Desktop: 2 Kolom */
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Kolom Kiri: Gambar --- */
+.about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 20px;
+  /* Efek border tipis glowing */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.02);
+}
+
+/* Badge Melayang (Keren!) */
+.experience-badge {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background: rgba(15, 23, 42, 0.9); /* Gelap transparan */
+  backdrop-filter: blur(15px);
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+}
+
+.badge-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.badge-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.badge-text span {
+  color: white;
+  font-weight: 700;
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* --- Kolom Kanan: Teks --- */
+.about-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Checklist Points */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 kolom checklist */
+  gap: 20px;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.feature-icon-box {
+  background: rgba(37, 99, 235, 0.2);
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--primary-color);
+  display: flex;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Mobile: 1 Kolom ke bawah */
+    gap: 80px;
+  }
+
+  .experience-badge {
+    right: 0;
+    bottom: -40px;
+  }
+}
