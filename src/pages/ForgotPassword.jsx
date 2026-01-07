@@ -9,7 +9,7 @@ const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
 
   // Ganti dengan Token asli Anda dari fonnte.com jika sudah siap live
-  const FONNTE_TOKEN = "TOKEN_FONNTE_ANDA_DISINI";
+  const FONNTE_TOKEN = "w41tKt9f1F1ah99rqjR7";
 
   // Fungsi untuk mengubah format 08xx menjadi 628xx
   const formatPhoneNumber = (number) => {
